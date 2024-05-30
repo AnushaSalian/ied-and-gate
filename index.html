@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOLVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/query.css" />
+    <script
+      defer
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://code.jquery.com/ui/1.8.17/jquery-ui.min.js"
+    ></script>
+    <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script defer src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"
+    ></script>
+
+    <script defer src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="title-div-container">
+
+      <div class="title-div">
+          <div class="logo-div">
+            <a href="#"><img src="images/logo_nitk.png" alt="Logo" class="logo" /></a>
+          </div>
+          <h1>AND Logic Implementation using PLC</h1>
+        </div>
+      </div>
+    <div class="container">
+      <div class="sidebar">
+        <ul class="tool-menu">
+          <li class="tool-list">
+            <a href="#simulation" class="tool-link" title="Simulation"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#089B93"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#ffffff"
+                class="icons"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 8.25V18a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 18V8.25m-18 0V6a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6zM7.5 6h.008v.008H7.5V6zm2.25 0h.008v.008H9.75V6z"
+                />
+              </svg>
+            </a>
+            <span>Simulation</span>
+          </li>
+          <li class="tool-list">
+            <a href="#variables" class="tool-link" title="Conditions"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#ffffff"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#089B93"
+                class="icons"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.745 3A23.933 23.933 0 003 12c0 3.183.62 6.22 1.745 9M19.5 3c.967 2.78 1.5 5.817 1.5 9s-.533 6.22-1.5 9M8.25 8.885l1.444-.89a.75.75 0 011.105.402l2.402 7.206a.75.75 0 001.104.401l1.445-.889m-8.25.75l.213.09a1.687 1.687 0 002.062-.617l4.45-6.676a1.688 1.688 0 012.062-.618l.213.09"
+                />
+              </svg></a
+              >
+              <span>Conditions</span>
+          </li>
+          <li class="tool-list">
+            <a href="#comments" class="tool-link" title="Truthtable"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#089B93"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#ffffff"
+                class="icons"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg></a
+              >
+              <span>Truthtable</span>
+          </li>
+         
+        </ul>
+      </div>
+      <div class="main">
+        <div class="main-section">
+          <div id="simulation" class="main__task-div">
+            <h3 class="task-title">Simulation</h3>
+            <div class="canvas__div">
+              <div id="canvas-container">
+                <h3 id="header" style=" margin: 1% auto; font-size:14px; color:#000; border-bottom:2px solid #000; visibility:hidden;"></h3>
+                <div class="conditions-div" style="display:flex; justify-content:center; align-items: center; width:100%; height: 400px;">
+                  <img id="1-1" style="width:55%; height:90%;" src="images/main.png"/>
+                </div>
+                  
+
+
+	<img id="2-1" style="position:absolute; left: 20%; top: 22%; visibility:hidden; width:50%; height:70%;" src="images/condition.png" />
+	<!-- <img id="2-1" style="position:absolute; left: 20%; top: 22%; visibility:hidden; width:50%;" src="images/plc.png" /> -->
+	<!-- <h5 id="2-2" style="position:absolute; left:210px; top:230px; visibility:hidden;">S<sub>1</sub> is mapped to I<sub>1</sub> and S<sub>2</sub> is mapped to I<sub>2</sub></h5> -->
+	<img id="s1" style="position:absolute; left: 28.5%; top: 24.5%; width: 3.5%; cursor:pointer; visibility:hidden;"  src="images/switch.png" />
+	<img id="s2" style="position:absolute; left: 28.5%; top: 39.8%; width: 3.5%;  cursor:pointer; visibility:hidden;"  src="images/switch.png" />
+	<!-- <img id="2-3" style="position:absolute; left:21%; top:68%; visibility:hidden; width:45%;" src="images/lad.png" /> -->
+	<img id="hp1" style="position:absolute; visibility:hidden; left:28.5%; top: 16%; width:3.5%;" src="images/hp.png" />
+	<img id="hp2" style="position:absolute; visibility:hidden; left:28.5%; top: 31.2%; width:3.5%;" src="images/hp.png" />
+	<img id="a1" style="position:absolute; left: 68.2%; top: 38.4%; width: 15.9%; height: 42.5%; visibility:hidden;" src="images/a1.png" />
+	<img id="a2" style="position:absolute; left: 34.3%; top: 78.8%; width: 3.5%; visibility:hidden;" src="images/arrow1.png" />
+  <!--a2=>(left value right to left) left: 57.4%; top: 78.4%; left: 47.4%; left: 41.1%; left: 34.3%; -->
+	<p id="i11" style="position:absolute; left: 37.3%; top: 75.4%; font-size:12px; font-weight:bold; visibility:hidden;">open</p>
+	<p id="i21" style="position:absolute; left: 44%; top: 75.4%; font-size:12px; font-weight:bold; visibility:hidden;">open</p>
+	<p id="o1" style="position:absolute; left: 50.2%; top: 75.4%; font-size:12px; font-weight:bold; visibility:hidden;">de-energized</p>
+	<p id="i12" style="position:absolute; left: 39.3%; top: 85.7%;font-size:13px; font-weight:bold; visibility:hidden;">0</p>
+	<p id="i22" style="position:absolute; left: 46%; top: 85.7%; font-size:13px; font-weight:bold; visibility:hidden;">0</p>
+	<div id="op" style="position:absolute; left: 80.3%; top: 59.7%; width: 7.5%; height: 6.5%; border-radius: 30px / 15px; background:#000; color:#fff; font-weight:bold; visibility:hidden; display: flex; align-items: center;
+  justify-content: center;"><span id="output">OFF<span></div>
+	<div id="c1" style="position:absolute; left: 38.8%; top: 79%; width: 0.35%; height: 6.4%; background:#000; visibility:hidden;"></div>
+	<div id="c2" style="position:absolute; left: 45.25%; top: 79%; width: 0.35%; height: 6.4%; background:#000; visibility:hidden;"></div>
+	<div id="e1" style="position:absolute; left: 52.8%; top: 81.1%; width: 2%; height: 3%; background:goldenrod; visibility:hidden;"></div>
+  <img id="lamp" style="position:absolute; left: 63%; top: 23%; width: 8.8%; height: 15.92%; visibility:hidden;" src="images/lamp.png" />
+               
+              </div>
+           
+            </div>
+          </div>
+          <div id="variables" class="main__task-div">
+            <div class="settings-sections">
+              <h3 class="task-title">Conditions</h3>
+              <div class="variables-sections">
+              
+              <div class="var-div">
+                <span>1. <button onclick="s1s2off()">S<sub>1</sub> and S<sub>2</sub> are OFF</button></span>
+              </div>
+              <div class="var-div">
+                <span>2. <button onclick="s1OnANDs2Off()">S<sub>1</sub> is ON and S<sub>2</sub> is OFF</button></span>
+              </div>
+              <div class="var-div">
+                <span>3. <button onclick="s1OffANDs2On()">S<sub>1</sub> is OFF and S<sub>2</sub> is ON</button></span>
+              </div>
+              <div class="var-div">
+                <span>4. <button onclick="s1ANDs2On()">S<sub>1</sub> is ON and S<sub>2</sub> is ON</button></span>
+              
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div id="comments" class="main__task-div">
+            <h3 class="task-title">Truthtable</h3>
+            <div class="settings-sections">
+              <table id="1-7" style=" text-align:center; width:330px; font-size:13px; margin:2.5%;"  border=1>
+                <tr>
+                  <td colspan=4>Truth table</td>
+                </tr>
+                <tr>
+                  <td>S<sub>1</sub> (switch1)</td>
+                  <td>S<sub>2</sub> (switch2)</td>
+                  <td>Light (ouput)</td>
+                </tr>
+                <tr>
+                  <td>0 (open)</td>
+                  <td>0 (open)</td>
+                  <td>0 (de-energized)</td>
+                </tr>
+                <tr>
+                  <td>1 (close)</td>
+                  <td>0 (open)</td>
+                  <td>0 (de-energized)</td>
+                </tr>
+                <tr>
+                  <td>0 (open)</td>
+                  <td>1 (close)</td>
+                  <td>0 (de-energized)</td>
+                </tr>
+                <tr>
+                  <td>1 (close)</td>
+                  <td>1 (close)</</td>
+                  <td>1 (energized)</</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          </div>
+          <div class="main__task-div footer">
+            <p>Copyright &copy; 2020 - <script>document.write(new Date().getFullYear())</script> SOLVE The Virtual Lab @ NITK Surathkal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
