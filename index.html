@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/ied.css" />
     <link rel="stylesheet" href="css/query.css" />
     <script
       defer
@@ -114,36 +115,28 @@
             <h3 class="task-title">Simulation</h3>
             <div class="canvas__div">
               <div id="canvas-container">
-                <h3 id="header" style=" margin: 1% auto; font-size:14px; color:#000; border-bottom:2px solid #000; visibility:hidden;"></h3>
-                <div class="conditions-div" style="display:flex; justify-content:center; align-items: center; width:100%; height: 400px;">
-                  <img id="1-1" style="width:55%; height:90%;" src="images/main.png"/>
-                </div>
-                  
-
-
-	<img id="2-1" style="position:absolute; left: 20%; top: 22%; visibility:hidden; width:50%; height:70%;" src="images/condition.png" />
-	<!-- <img id="2-1" style="position:absolute; left: 20%; top: 22%; visibility:hidden; width:50%;" src="images/plc.png" /> -->
-	<!-- <h5 id="2-2" style="position:absolute; left:210px; top:230px; visibility:hidden;">S<sub>1</sub> is mapped to I<sub>1</sub> and S<sub>2</sub> is mapped to I<sub>2</sub></h5> -->
-	<img id="s1" style="position:absolute; left: 28.5%; top: 24.5%; width: 3.5%; cursor:pointer; visibility:hidden;"  src="images/switch.png" />
-	<img id="s2" style="position:absolute; left: 28.5%; top: 39.8%; width: 3.5%;  cursor:pointer; visibility:hidden;"  src="images/switch.png" />
-	<!-- <img id="2-3" style="position:absolute; left:21%; top:68%; visibility:hidden; width:45%;" src="images/lad.png" /> -->
-	<img id="hp1" style="position:absolute; visibility:hidden; left:28.5%; top: 16%; width:3.5%;" src="images/hp.png" />
-	<img id="hp2" style="position:absolute; visibility:hidden; left:28.5%; top: 31.2%; width:3.5%;" src="images/hp.png" />
-	<img id="a1" style="position:absolute; left: 68.2%; top: 38.4%; width: 15.9%; height: 42.5%; visibility:hidden;" src="images/a1.png" />
-	<img id="a2" style="position:absolute; left: 34.3%; top: 78.8%; width: 3.5%; visibility:hidden;" src="images/arrow1.png" />
-  <!--a2=>(left value right to left) left: 57.4%; top: 78.4%; left: 47.4%; left: 41.1%; left: 34.3%; -->
-	<p id="i11" style="position:absolute; left: 37.3%; top: 75.4%; font-size:12px; font-weight:bold; visibility:hidden;">open</p>
-	<p id="i21" style="position:absolute; left: 44%; top: 75.4%; font-size:12px; font-weight:bold; visibility:hidden;">open</p>
-	<p id="o1" style="position:absolute; left: 50.2%; top: 75.4%; font-size:12px; font-weight:bold; visibility:hidden;">de-energized</p>
-	<p id="i12" style="position:absolute; left: 39.3%; top: 85.7%;font-size:13px; font-weight:bold; visibility:hidden;">0</p>
-	<p id="i22" style="position:absolute; left: 46%; top: 85.7%; font-size:13px; font-weight:bold; visibility:hidden;">0</p>
-	<div id="op" style="position:absolute; left: 80.3%; top: 59.7%; width: 7.5%; height: 6.5%; border-radius: 30px / 15px; background:#000; color:#fff; font-weight:bold; visibility:hidden; display: flex; align-items: center;
-  justify-content: center;"><span id="output">OFF<span></div>
-	<div id="c1" style="position:absolute; left: 38.8%; top: 79%; width: 0.35%; height: 6.4%; background:#000; visibility:hidden;"></div>
-	<div id="c2" style="position:absolute; left: 45.25%; top: 79%; width: 0.35%; height: 6.4%; background:#000; visibility:hidden;"></div>
-	<div id="e1" style="position:absolute; left: 52.8%; top: 81.1%; width: 2%; height: 3%; background:goldenrod; visibility:hidden;"></div>
-  <img id="lamp" style="position:absolute; left: 63%; top: 23%; width: 8.8%; height: 15.92%; visibility:hidden;" src="images/lamp.png" />
+                <h3 id="header" class="header hide"></h3>
+                <div class="conditions-div">
+                  <img id="1-1" class="can1-1" src="images/main.png"/>
+                  <img id="2-1" class="can2-1 hide" src="images/condition.png" />
+                  <img id="s1" class="s1 txt hide"  src="images/switch.png" />
+                  <img id="s2" class="s2 txt hide"  src="images/switch.png" />
+                  <img id="hp1" class="hp1 txt hide" src="images/hp.png" />
+                  <img id="hp2"  class="hp2 txt hide" src="images/hp.png" />
+                  <img id="a1" class="a1 hide" src="images/a1.png" />
+                  <img id="a2" class = "a2 arrow-1 hide"  src="images/arrow1.png" />
+                  <p id="i11" class="i11 txt hide">open</p>
+                  <p id="i21" class="i21 txt hide">open</p>
+                  <p id="o1" class="o1 txt hide">de-energized</p>
+                  <p id="i12" class="i12 txt hide">0</p>
+                  <p id="i22" class="i22 txt hide">0</p>
+                  <div id="op" class="op txt hide"><span id="output">OFF<span></div>
+                  <div id="c1" class="c1 hide"></div>
+                  <div id="c2" class="c2 hide"></div>
+                  <div id="e1"class="e1 hide"></div>
+                  <img id="lamp" class="lamp hide" src="images/lamp.png" />
                
+                </div>
               </div>
            
             </div>
@@ -173,7 +166,7 @@
           <div id="comments" class="main__task-div">
             <h3 class="task-title">Truthtable</h3>
             <div class="settings-sections">
-              <table id="1-7" style=" text-align:center; width:330px; font-size:13px; margin:2.5%;"  border=1>
+              <table id="1-7" style=" text-align:center;font-size:13px; margin:2.5%;"  border=1>
                 <tr>
                   <td colspan=4>Truth table</td>
                 </tr>
